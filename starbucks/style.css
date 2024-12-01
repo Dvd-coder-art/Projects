@@ -1,0 +1,1440 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+:root{
+  --cor-principal: #FAF9F6; /* Azul */
+  --cor-secundaria: #2b724a; /* Verde */
+  --texto-cor: #1e3932; /* Cinza escuro */
+  --starbucks-green: #006241;
+  --accent-green: #00995c;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--cor-principal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* ou altere para 'overflow: auto;' */
+}
+
+html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: scroll; /* Ativar rolagem, se necessário */
+}
+
+button{
+  height: 50px;
+  width: 100px;
+  border: none;
+  background-color: var(--texto-cor);
+  color: var(--cor-principal);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover{
+  transform: scaleX(1.05);
+}
+
+span{
+  color: var(--cor-secundaria);
+}
+
+.titulo{
+  font-size: 50px;
+  font-weight: 600;
+}
+/*CONFIG GERAL FIM*/
+
+/*MENU FIXO ESTILO ESQUERDO*/
+header{
+  position: fixed;
+  z-index: 100;
+}
+
+header.shadow{
+  background-color: var(--cor-principal);
+  transition: .4s;
+  box-shadow: 2px 4px 4px #4b4b4b49;
+}
+
+.menu-fixo{
+  text-transform: uppercase;
+  height: 100px;
+  width: 100vw;
+  justify-content: space-between;
+  display: flex;
+  box-shadow: 0 0 5px #555;
+  background-color: #fff;
+}
+
+.menu-fixo .menu-left{
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-fixo .menu-left ul{
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+
+}
+
+.menu-fixo .menu-left ul a{
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #000;
+  position: relative;
+}
+
+.menu-left a::after{
+  content: " ";
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.menu-left a:hover::after{
+  width: 100%;
+  transition: .6s;
+}
+
+/*MENU FIXO ESTILO DIREITO*/
+
+.menu-fixo .menu-righ{
+  
+  padding-left: 50px;
+  padding-right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-direction: row;
+}
+
+.menu-righ .text-righ{
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.menu-fixo .menu-mobile{
+  display: none;
+}
+
+.text-righ h1{
+  margin-top: -5px;
+  font-size: 20px;
+}
+
+.text-righ h2{
+  margin-top: -10px;
+  font-size: 15px;
+}
+
+.text-righ p{
+  padding-right: 5px;
+  font-size: 10px;
+}
+
+.loc-righ i {
+  font-size: 20px; 
+}
+
+.loc-righ p {
+  text-transform: capitalize;
+  font-weight: 500;
+  margin: 0; 
+  font-size: 14px; 
+}
+
+.loc-righ a{
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} 
+
+
+.menu-lista {
+  visibility: hidden; /* Inicialmente invisível */
+  opacity: 0; /* Inicialmente invisível */
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 100px; /* Posição do menu */
+  left: 0;
+ 
+  transform: translateY(-20px); /* Inicialmente deslocado */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; /* Transições suaves */
+}
+
+.menu-lista.show {
+  visibility: visible; /* Torna o menu visível */
+  opacity: 1; /* Torna visível */
+  transform: translateY(0); /* Move para a posição normal */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transições suaves */
+}
+
+.menu-lista ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.menu-lista ul a {
+  display: block;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menu-lista ul a:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-mobile i {
+  color: #000000;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/*HOME ESTILO*/
+
+section.home{
+  margin: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container-home{ 
+  margin-top: 100px;
+  border-radius: 15px;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.img-home img{
+  position: relative;
+  max-width: 550px;
+  animation: flutuar 1s ease-in-out infinite alternate;
+}
+
+.row-inicio {
+  display: flex; /* Alinha as colunas horizontalmente */
+  gap: 20px; /* Espaçamento entre as colunas */
+}
+
+.row-inicio .text{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.row-inicio h1{
+  line-height: 50px;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+.text p{
+  margin-top: 20px;
+  color:#000;
+  font-weight: 400;
+}
+
+.text .span1{
+  color: var(--cor-secundaria);
+}
+
+.span2{
+  color: var(--texto-cor);
+}
+
+.text button{
+  margin-top: 50px;
+  margin-left: 100px;
+  transition: .2s;
+}
+
+
+@keyframes flutuar {
+
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 20px;
+  }
+}
+/*HOME ESTILO FIM*/
+
+
+/*APP ESTILO*/
+section.app{
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  
+}
+
+.containerImg {
+  position: relative; /* Torna o container um elemento posicionado */
+  margin-top: 150px;
+  margin-bottom: -150px;
+}
+
+.containerImg img {
+  width: 100vw;
+  height: 500px;
+  object-fit: cover;
+  margin-bottom: -7px;
+  margin-right: 8px;
+  
+}
+
+.containerImg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d4e9e2d8; /* Cor preta com opacidade de 40% */
+  pointer-events: none; /* Permite cliques passarem para a imagem */
+}
+
+.textoApp{
+  position: relative;
+  text-align: center;
+  top: -15rem;
+  padding: 40px;
+}
+
+
+.textoApp h2{
+  color: #1e3932;
+  font-size: 50px;
+  font-weight: 300;
+  text-transform: uppercase;
+ 
+}
+
+.textoApp p{
+  font-weight: 500;
+  color: #1e3932;
+}
+
+.textoApp button{
+  margin-top: 50px;
+  background: none;
+  border: 1px solid var(--texto-cor);
+  color: var(--texto-cor);
+  transition: .2s;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.textoApp button:hover{
+  transform: scale(1.05);
+  box-shadow: none;
+}
+
+/*SABORES NOVOS*/
+section.sabores-new{
+  margin: 0;
+  padding-top: 80px;
+  margin-top: -120px;
+  width: 100vw;
+}
+
+
+.container-sabores{
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 15px #69696971; /* Sombra para baixo */
+}
+
+.container-sabores .textBox{
+  margin-left: 20px;
+  margin-top: -200px;
+  left: 80px;
+  position: relative;
+  max-width: 600px;
+}
+
+.container-sabores .textBox h2{
+  color: #333;
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.container-sabores .imgBox{
+  width: 600px;
+  display: flex;
+  padding-right: 50px;
+  margin-top: 40px;
+ 
+}
+
+.container-sabores .imgBox img{
+  max-width: 340px;
+
+}
+
+.thumb{
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 3;
+}
+
+.thumb li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.thumb li img{
+  max-width: 60px;
+}
+
+.thumb li:hover{
+  transform: translateY(-15px);
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cor-secundaria);
+  clip-path: circle(600px at right 800px);
+  z-index: 1;
+  animation: circleEffect 1s ease-in-out forwards; /* Mantém a suavidade */
+  transition: background-color 0.2s ; /* Suaviza a troca de cor */
+
+}
+
+
+@keyframes circleEffect {
+  0% {
+    clip-path: circle(0px at 100% 100%);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(500px at 100% 100%);
+    transform: scale(1);
+    opacity: 1; /* Gradualmente desaparece */
+  }
+}
+
+.textBox,
+.imgBox {
+  position: relative;
+  z-index: 2; /* Garante que o texto e a imagem fiquem acima do círculo */
+}
+
+/*SABORES NOVOS FIM*/
+/*PRODUTOS*/
+section.items {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+section.items .titulo{
+  text-align: center;
+  margin-top: -10px;
+
+}
+
+.cardContainer{
+  padding: 5rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+}
+
+
+.cardContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+ 
+}
+
+.cardArticle {
+  display: flex;
+  flex-direction: column; /* Coloca imagem e texto em coluna */
+  justify-content: space-between;
+  align-items: center;
+  width: 280px; /* Ajuste a largura para que 3 caibam confortavelmente */
+  height: auto;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
+  background: #2b724a49;
+  box-shadow: 0 0 5px #25252591;
+  
+}
+
+.cardImagem {
+  text-align: center;
+  margin: 0; /* Remove o espaçamento extra */
+}
+
+.cardData {
+  width: 100%; /* Garante que o texto ocupe toda a largura do card */
+  background-color: var(--texto-cor);
+  padding: 15px; /* Ajuste o padding para economizar espaço */
+  text-align: center;
+  z-index: 1;
+  height: 200px;
+}
+
+.cardImg {
+  max-width: 180px;
+  display: block;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  position: relative; /* Necessário para o z-index funcionar */
+  z-index: 2; /* Coloca a imagem acima da sombra */
+}
+
+.cardShadow {
+  width: 200px;
+  height: 200px;
+  background-color: #4746464c;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%; /* Posiciona a sombra verticalmente */
+  left: 50%; /* Posiciona a sombra horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza a sombra em relação ao container */
+  z-index: 1; /* Garante que a sombra fique atrás da imagem */
+  filter: blur(45px);
+}
+
+.cardName{
+  color: #000;
+  margin-bottom: .75rem;
+}
+
+.cardDescription{
+  font-weight: 500;
+  font-size: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.cardData p{
+  margin-top: -10px;
+  text-align: center;
+  color:var(--cor-principal);
+  line-height: 15px;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.cardData h3{
+  font-size: 25px;
+  color: var(--cor-principal);
+  text-transform: uppercase;
+}
+
+.cardButton{
+  display: inline-block;
+  border: 1px solid var(--cor-principal);
+  padding: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 20px;
+  transition: .3s ease-in-out;
+}
+
+.cardButton:hover{
+  transform: scale(1.05);
+}
+
+.swiper {
+  width: auto; /* Faz o swiper ocupar toda a largura disponível */
+  max-width: 1200px; /* Limite para evitar esticar muito */
+  margin: auto; /* Centraliza o swiper no container */
+  overflow: hidden;
+  padding: 15px;
+  
+}
+
+/* Configura os botões para que fiquem centralizados ao lado do conteúdo */
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100px; /* Define o tamanho dos slides */
+  height: auto; /* Mantém a altura responsiva */
+}
+
+/* Estilo para os botões de navegação do Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: var(--texto-cor); /* Cor de fundo */
+  color: #fff; /* Cor do ícone */
+  border-radius: 50%; /* Deixa os botões redondos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Largura do botão */
+  height: 40px; /* Altura do botão */
+  position: absolute; /* Fica posicionado em relação ao container swiper */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajuste final para centralizar */
+  z-index: 10;
+  opacity: .9; /* Deixa os botões levemente transparentes */
+  transition: opacity 0.3s ease; /* Animação ao passar o mouse */
+}
+
+/* Alinha os botões ao lado da cardContainer, centralizando-os */
+.swiper-button-next {
+  right: 0; /* Alinha o botão "next" à direita do container */
+}
+
+.swiper-button-prev {
+  left: 0; /* Alinha o botão "prev" à esquerda do container */
+}
+
+/* Mudando a opacidade quando o botão for hover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1; /* Aumenta a opacidade ao passar o mouse */
+}
+
+/* Personalizando o ícone dentro do botão */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px; /* Tamanho do ícone */
+  content: ''; /* Remove qualquer conteúdo padrão */
+}
+
+/* Ícones personalizados para os botões */
+.swiper-button-next::after {
+  content: '→'; /* Ícone de seta direita */
+}
+
+.swiper-button-prev::after {
+  content: '←'; /* Ícone de seta esquerda */
+}
+
+
+/*PRODUTOS FIM*/
+
+
+/* ESTILO PREPARO */
+
+
+section.preparar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.containerPreparar {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #0000008b;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.containerPreparar-active {
+  background-color: var(--texto-cor); /* Nova cor de fundo quando a classe for ativada */
+}
+
+/* Texto e Botão */
+.texto {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  padding: 20px;
+  opacity: 1;
+  transition: transform 1s ease-in-out, opacity .6s ease-in-out;
+}
+
+.texto p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.texto button {
+  margin-top: 20px;
+  height: 40px;
+  background-color: var(--texto-cor);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.texto button:hover {
+  background-color: #555;
+}
+
+/* Imagem */
+.containerPreparar img {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1; /* Começa visível */
+  transform: translateX(0); /* Posição inicial da imagem */
+  transition: transform 1s ease-in-out, opacity 0.6s ease-in-out; /* Transições para movimento e opacidade */
+  border-radius: 5px;
+}
+
+/* Para a imagem desaparecer e sair da tela com efeito de slide */
+.containerPreparar img.fade-out {
+  opacity: 0; /* Esconde a imagem */
+  transform: translateX(100%); /* Faz a imagem sair para a esquerda */
+  transition: transform 1s ease-in-out, opacity 0.7s ease-in-out; /* Transição de movimento e opacidade */
+}
+
+/* Quando a nova imagem entra, ela vem para a posição inicial e ganha opacidade */
+.containerPreparar img.fade-in.show {
+  opacity: 1; /* A imagem aparece */
+  transform: translateX(100%); /* Move para a posição inicial */
+  transition: transform 0.7s ease-in-out, opacity 0.6s ease-in-out; /* Mantém a transição suave */
+}
+
+/* Animação de Slide */
+.containerPreparar.slide-active .texto {
+  transform: translateX(100%);
+  transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.containerPreparar.slide-active .texto p {
+  color: var(--cor-principal);
+}
+
+.containerPreparar.slide-active img {
+  transform: translateX(-100%);
+  transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* Deixar o botão com estilo quando o slide está ativo */
+.containerPreparar.slide-active button {
+  background-color: none;
+  color: var(--cor-principal);
+  border: 1px solid var(--cor-principal);
+}
+
+/* PREPARO ESTILO FIM */
+
+/*ESTILO FOOTER*/
+
+section.footer{
+  margin-top: 90px;
+}
+
+.footer{
+  width: 100vw;
+  background: var(--texto-cor);
+  color: #cacaca;
+  border-top:2px solid var(--cor-principal) ;
+}
+
+.footer-container{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 50px;
+}
+
+.footer-container .logo{
+  margin-bottom: 1rem;
+}
+
+.logo img{
+  height: 50px;
+}
+
+.footer-container .footer-box{
+  display: flex;
+  gap:10px;
+  flex-direction: column;
+  
+}
+
+
+.social{
+  display: flex;
+  align-items: center;
+}
+
+.social a{
+  font-size: 24px;
+  color: var(--cor-principal);
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.social a:hover{
+  color: var(--cor-principal);
+}
+
+.footer-box h3{
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.footer-box a, 
+.footer-box p{
+  color: #818181;
+  text-decoration: none;
+}
+
+.footer-box a:hover{
+  color: var(--cor-principal);
+}
+
+/*ESTILO FOOTER FINAL*/
+
+.copyright{
+  padding-top: 40px;
+  top: 40px;
+  background-color: var(--texto-cor);
+  width: 100vw;
+  text-align: center;
+  color: var(--cor-principal);
+}
+
+.copyright p{
+  font-weight: 200;
+}
+
+
+
+@media screen and (max-width: 1035px){
+  .swiper{
+   width: 600px;
+  }
+
+  .container-sabores .textBox{
+    max-width: 400px;
+  }
+  .container-sabores .textBox h2{
+    line-height: 70px;
+  }
+  .container-sabores .thumb{
+    transform: translatey(40%);
+  }
+
+  .container-sabores .thumb li{
+    margin: 5px;
+  }
+  .container-sabores .thumb img{
+    max-height: 50%;
+  }
+
+  .cardArticle {
+   width: 120px; /* Ajuste a largura do card */
+    max-height: 420px;
+  }
+
+  .cardContainer .titulo h1{
+    display: none;
+  }
+
+  
+}
+
+@media screen and (max-width: 1090px) {
+ 
+ /*ESTILO MENU*/
+
+  .menu-fixo {
+    flex-direction: column; /* Transforma o menu em coluna */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-fixo .menu-left{
+    display: none;
+  }
+  
+  .menu-left ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-left ul a {
+    font-size: 14px; /* Ajusta o tamanho da fonte */
+  }
+
+  .menu-fixo .menu-righ {
+    display: none;
+  }
+
+  .menu-fixo .menu-mobile {
+    display: flex;
+    position: relative;
+    top: 20px;
+    width: 100%; /* Garantir que o menu mobile ocupe toda a largura */
+    justify-content: space-between; /* Alinha o conteúdo do menu mobile ao centro */
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  
+
+  .menu-lista.show {
+    display: block; /* Exibe o menu */
+    opacity: 1; /* Torna o menu visível */
+    transform: translateY(0); /* Move o menu para sua posição original */
+  }
+  /*ESTILO MENU FIM*/
+  
+  /*ESTILO HOME*/
+  .container-home {
+    padding: 15px;
+    margin-top: 80px;
+  }
+
+   /*ESTILO HOME*/
+   section.home{
+    padding: 40px;
+  
+  }
+
+  .text button{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .2s;
+  }
+
+  .img-home img{
+    position: relative;
+    max-height: 250px;
+    max-width: 550px;
+    animation: flutuar 1s ease-in-out infinite alternate;
+
+  }
+
+  .row-inicio {
+    flex-direction: column; /* Alinha as colunas verticalmente */
+    gap: 20px;
+    align-items: center;
+  }
+
+  .row-inicio h1 {
+    font-size: 35px;
+    line-height: 1.2;
+  }
+
+  .row-inicio .text {
+    text-align: center;
+  }
+  /*ESTILO HOME FIM*/
+  
+
+  /* SABORES ESTILO */
+  section.sabores-new {
+    margin: 0;
+    padding-top: 0px;
+    margin-top: -150px;
+    width: 100vw;
+  }
+  .container-sabores {
+    gap: 20px;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .container-sabores .textBox {
+    padding-top: 20px;
+    margin: 0;
+    text-align: justify;
+   
+  }
+
+  .container-sabores .imgBox {
+    justify-content: flex-end;
+  }
+
+  .container-sabores .imgBox img{
+    max-height: 450px;
+    max-width: 250px;
+  }
+
+  .thumb{
+    left: 30%;
+  }
+  .circle{
+   display: none;
+  }
+
+
+  /* Cards de produtos */
+
+  .swiper{
+    
+    max-width: 900px;
+  }
+
+  .swiper-button-next {
+    right: 20px; /* Alinha o botão "next" à direita do container */
+  }
+  
+  .swiper-button-prev {
+    left: 20px; /* Alinha o botão "prev" à esquerda do container */
+  }
+
+  .cardArticle {
+    width: 90%; 
+  }
+
+ 
+  .swiper-slide {
+    width: auto; 
+  }
+
+  @media screen and (max-width: 1035px){
+    .swiper{
+     width: 600px;
+    }
+  
+    .container-sabores .textBox{
+      max-width: 400px;
+    }
+    .container-sabores .textBox h2{
+      line-height: 70px;
+    }
+    .container-sabores .thumb{
+      transform: translatey(40%);
+    }
+  
+    .container-sabores .thumb li{
+      margin: 5px;
+    }
+    .container-sabores .thumb img{
+      max-height: 50%;
+    }
+  
+    .cardArticle {
+     width: 120px; /* Ajuste a largura do card */
+      max-height: 420px;
+    }
+  
+    .cardContainer .titulo h1{
+      display: none;
+    }
+  
+    
+  }
+  /* SABORES ESTILO FIM*/
+
+  /* PREPARO ESTILO */
+
+
+  .containerPreparar {
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .containerPreparar .texto {
+    width: auto;
+    text-align: start;
+    padding: 10px;
+    margin-left: 30px;
+  }
+
+  .texto p {
+    width: 50%;
+    font-size: 20px;
+  }
+
+  .containerPreparar img {
+    width: 400px;
+    height: 400px;
+    transform: translateX(20%);
+  }
+
+  /* Para a imagem desaparecer e sair da tela com efeito de slide */
+  .containerPreparar img.fade-out {
+    opacity: 0; /* Esconde a imagem */
+    transform: translateX(70%); /* Faz a imagem sair para a esquerda */
+    transition: transform 1s ease-in-out, opacity 0.7s ease-in-out; /* Transição de movimento e opacidade */
+  }
+
+  /* Quando a nova imagem entra, ela vem para a posição inicial e ganha opacidade */
+  .containerPreparar img.fade-in.show {
+    opacity: 1; /* A imagem aparece */
+    transform: translateX(70%); /* Move para a posição inicial */
+    transition: transform 0.7s ease-in-out, opacity 0.6s ease-in-out; /* Mantém a transição suave */
+  }
+
+  /* Animação de Slide */
+  .containerPreparar.slide-active .texto {
+    transform: translateX(100%);
+    transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+  }
+
+  .containerPreparar.slide-active .texto p {
+    color: var(--cor-principal);
+  }
+
+  .containerPreparar.slide-active img {
+    transform: translateX(-170%);
+    transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+    
+  }
+
+  /* Deixar o botão com estilo quando o slide está ativo */
+  .containerPreparar.slide-active button {
+    background-color: none;
+    color: var(--cor-principal);
+    border: 1px solid var(--cor-principal);
+  }
+  
+
+  @media screen and (max-width: 964px){
+
+    .containerPreparar .texto {
+      width: auto;
+      text-align: start;
+      padding: 10px;
+      margin-left: 10px;
+    }
+
+    .containerPreparar .texto p{
+     font-size: 15px;
+    
+    }
+
+    .containerPreparar img {
+      object-position:  70% 30%;
+      width: 60%;
+      height: 100%;
+      
+    }
+
+      /* Animação de Slide */
+    .containerPreparar.slide-active .texto {
+      transform: translateX(100%);
+      transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+    }
+
+    .containerPreparar.slide-active img {
+      transform: translateX(-90%);
+      transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+      
+    }
+    @media screen and (max-width: 764px){
+      
+      .container-sabores .textBox {
+        max-width: 300px;
+        font-size: 80%;
+      }
+
+      .container-sabores .textBox h2{
+        line-height: 80%;
+      }
+
+      .container-sabores .textBox p{
+        padding-top: 5%;
+        font-size: 15px;
+      }
+
+      .containerPreparar .texto p{
+        font-size: 10px;
+       
+       }
+
+      .containerPreparar.slide-active .texto {
+        transform: translateX(130%);
+        transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+      }
+    
+      .containerPreparar.slide-active img {
+        transform: translateX(-90%);
+        transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+        
+      }
+
+      .swiper {
+        max-width: 400px;
+        margin: 0;
+      }
+
+      @media screen and (max-width: 676px){
+        section .container-sabores{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 5px 5px #58585894;
+        }
+
+        .container-sabores .textBox{
+          padding: 0;
+          margin: 0;
+          top: 40px;
+          left: 0;
+          text-align: center;
+        }
+
+        .container-sabores .imgBox{
+          justify-content: center;
+          padding: 0;
+          padding-bottom: 40px;
+        }
+        
+        .container-sabores .imgBox img {
+          height: 50%;
+          width: 50%;
+        }
+        .container-sabores .textBox p{
+          font-size: 70%;
+
+        }
+        .container-sabores .thumb{
+          padding-top: 30px;
+          left: 34%;
+        }
+
+        .container-sabores .textBox h2{
+          font-size: 40px;
+        }
+        @media screen and (max-width: 578px){
+        .textoApp{
+          padding: 0;
+        }
+
+        .textoApp h2{
+          font-size: 40px;
+        }
+
+        .textoApp p{
+          font-size: 15px;
+          padding: 20px;
+        }
+
+        .containerPreparar.slide-active .texto {
+          transform: translateX(100%);
+          transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+        }   
+
+        .swiper {
+          max-width: 300px;
+          margin: 0;
+          padding: 0;
+        }
+
+
+          @media screen and (max-width: 496px){
+            .containerPreparar.slide-active .texto {
+              transform: translateX(70%);
+              transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+            }    
+        
+            .containerPreparar.slide-active img {
+              transform: translateX(-90%);
+              transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+              
+            }
+
+            section.footer {
+              margin-top: 50px; /* Diminua o espaçamento superior */
+            }
+          
+            .footer-container {
+              flex-direction: row; /* Alinhe os itens verticalmente */
+              align-items: center; /* Centralize os itens */
+              gap: 15px; /* Ajuste o espaçamento entre os elementos */
+              padding: 20px; /* Reduza o padding */
+            }
+          
+            .footer-container .logo img {
+              height: 40px; /* Reduza o tamanho do logo */
+            }
+          
+            .footer-container .footer-box {
+              align-items: center; /* Centralize os textos */
+              gap: 5px; /* Reduza o espaçamento entre elementos */
+            }
+          
+            .footer-box h3 {
+              font-size: 1rem; /* Diminua o tamanho da fonte dos títulos */
+            }
+          
+            .footer-box a,
+            .footer-box p {
+              font-size: 0.9rem; /* Ajuste o tamanho da fonte dos links e textos */
+              text-align: center; /* Centralize o texto */
+            }
+          
+            .social a {
+              font-size: 20px; /* Ajuste o tamanho dos ícones sociais */
+              margin-right: 0.5rem; /* Reduza o espaçamento entre ícones */
+            }
+          
+            .copyright {
+              padding-top: 20px; /* Reduza o padding superior */
+              font-size: 0.8rem; /* Reduza o tamanho do texto */
+            }
+
+            @media screen and (max-width: 397px){
+              .textoApp{
+                top:-300px;
+              }
+
+              .container-sabores .thumb{
+                align-items: center;
+                padding-bottom: 40px;
+                left: 110px;
+              }
+
+
+
+              .container-sabores .thumb li {
+                display: flex;
+                margin: 0;
+                align-items: center;
+                justify-content: center;
+              }
+
+              .thumb img{
+                height: 50%;
+                width: 50%;
+                align-items: center;
+              }
+
+              .container-sabores .imgBox img {
+                height: 30%;
+                width: 30%;
+              }
+
+              .swiper {
+                max-width: 800px;
+                max-height: 300px;
+                margin: 0;
+              }
+
+              .cardImg{
+                max-width: 70%;
+                max-height: 70%;
+              }
+
+
+              .cardArticle h3{
+                font-size: 15px;
+              }
+              
+              .cardArticle p{
+                font-size: 8px;
+              }
+
+              .cardData{
+                padding-bottom: 60px;
+              }
+
+              .cardButton{
+               display: none;
+              }
+             
+
+              @media screen and (max-width: 374px){
+                .containerPreparar.slide-active .texto {
+                  transform: translateX(50%);
+                  transition: 1s ease-in-out, opacity 0.6s ease-in-out;
+                }    
+              }
+            }
+          }
+        }
+      }     
+    }
+  }
+
+
+/* PREPARO ESTILO FIM */
+
+  /* Footer ESTILO */
+  .footer-container {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-container .footer-box {
+    text-align: center;
+  }
+
+  .footer-box a{
+    color: var(--cor-principal);
+    font-weight: 200;
+  } 
+  /* Footer ESTILO FIM*/
+}
+
+
+

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/img/logo.png" sizes="32x32">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/swipe.css">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <title>StarBucks</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="menu-fixo">
+        <div class="menu-left">
+          <img src="/img/logo.png" alt="logo" style="height: 60px;">
+          <ul>
+            <a href="#items"><li>menu</li></a>
+            <a href="#preparar"><li>nosso café</li></a>
+            <a href="#app"><li>projetos</li></a>
+          </ul>
+        </div>
+        <div class="menu-righ">
+          <div class="text-righ">
+            <p>StarBucks</p>
+            <h1>Histórias</h1>
+            <h2>Brazil</h2>
+          </div>
+          <div class="loc-righ">
+            <a href="#"><i class="bi bi-geo-alt-fill"></i>
+            <p>Encontrar lojas</p></a>
+          </div>        
+        </div>
+        <div class="menu-mobile">
+          <img src="/img/logo.png" alt="logo" style="height: 60px;">
+          <i class="bi bi-list" id="menu-icon"></i>
+        </div>
+        <div class="menu-lista" id="menu-lista">
+          <ul>
+            <a href=""><li>menu</li></a>
+            <a href=""><li>nosso café</li></a>
+            <a href=""><li>projetos</li></a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header><!--MENU-FIXO-->
+
+  <section class="home" id="home">
+    <div class="container-home">
+        <div class="row-inicio">
+          <div class="text">
+            <h1>Uma variedade de <span class="span1">sabores<br></span> para <span class="span2">você.</span></h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              <br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              <br> when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <button>Saber Mais</button>
+          </div>
+          <div class="img-home">
+            <img src="/img/home.png" alt="">
+          </div>
+        </div>
+    </div>
+  </section><!--HOME-->
+  
+  <section class="app" id="app">
+    <div class="containerImg">
+      <img src="/img/delivery.png" alt="">
+    </div>
+    <div class="textoApp">
+      <h2>Sempre ao seu lado</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br>
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <button>Saber Mais</button>
+      </div>
+  </section><!--APP-->
+
+  <section class="sabores-new" id="sabores">
+    <div class="container-sabores">
+      <div class="circle"></div>
+      <div class="textBox">  
+        <h2>Novos <span class="sabores">sabores</span></h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          <br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="imgBox">
+          <img src="/img/img1.png" alt="" class="starbucks">
+        </div>
+        <ul class="thumb">
+          <li><img src="/img/thumb1.png" onclick="imgSlider('img/img1.png'); colorCircle('#017143'); colorSabor('#017143')">
+            </li>
+          <li><img src="/img/thumb2.png" onclick="imgSlider('img/img2.png'); colorCircle('#eb7495'); colorSabor('#eb7495')">
+            </li>
+          <li><img src="/img/thumb3.png" onclick="imgSlider('img/img3.png'); colorCircle('#d752b1'); colorSabor('#d752b1')">
+            </li>
+        </ul>
+      </div>
+  </section><!--SABORES NEW-->
+
+   <section class="items" id="items">
+      <div class="cardContainer">
+        
+        <div class="cardContent swiper">
+          <div class="swiper-wrapper">
+            <article class="cardArticle swiper-slide">
+              <div class="cardImagem">
+                <img src="/img/shop1.png" alt="" class="cardImg" height="250px">
+                <div class="cardShadow"></div>
+              </div>
+              <div class="cardData">
+                <h3 class="cardName">Morango</h3>
+                <p class="cardDescription">Passionate about development and design,
+                  I carry out projects at the request of users.
+                </p>
+                <a href="#" class="cardButton">View More</a>
+              </div>
+            </article><!--Morango-->
+
+            <article class="cardArticle swiper-slide">
+              <div class="cardImagem">
+                <img src="/img/shop2.png" alt="" class="cardImg" height="250px">
+                <div class="cardShadow"></div>
+              </div>
+              <div class="cardData">
+                <h3 class="cardName">baunilha</h3>
+                <p class="cardDescription">Passionate about development and design,
+                  I carry out projects at the request of users.
+                </p>
+                <a href="#" class="cardButton">View More</a>
+              </div>
+            </article><!--Café com bn-->
+
+            <article class="cardArticle swiper-slide">
+              <div class="cardImagem">
+                <img src="/img/shop3.png" alt="" class="cardImg" height="250px">
+                <div class="cardShadow"></div>
+              </div>
+              <div class="cardData">
+                <h3 class="cardName">Pistache</h3>
+                <p class="cardDescription">Passionate about development and design,
+                  I carry out projects at the request of users.
+                </p>
+                <a href="#" class="cardButton">View More</a>
+              </div>
+            </article><!--Pistache-->
+
+            <article class="cardArticle swiper-slide">
+              <div class="cardImagem">
+                <img src="/img/shop1.png" alt="" class="cardImg" height="250px">
+                <div class="cardShadow"></div>
+              </div>
+              <div class="cardData">
+                <h3 class="cardName">morango</h3>
+                <p class="cardDescription">Passionate about development and design,
+                  I carry out projects at the request of users.
+                </p>
+                <a href="#" class="cardButton">View More</a>
+              </div>
+            </article>
+
+            <article class="cardArticle swiper-slide">
+              <div class="cardImagem">
+                <img src="/img/shop2.png" alt="" class="cardImg" height="250px">
+                <div class="cardShadow"></div>
+              </div>
+              <div class="cardData">
+                <h3 class="cardName">baunilha</h3>
+                <p class="cardDescription">Passionate about development and design,
+                  I carry out projects at the request of users.
+                </p>
+                <a href="#" class="cardButton">View More</a>
+              </div>
+            </article>
+
+            <article class="cardArticle swiper-slide">
+              <div class="cardImagem">
+                <img src="/img/shop3.png" alt="" class="cardImg" height="250px">
+                <div class="cardShadow"></div>
+              </div>
+              <div class="cardData">
+                <h3 class="cardName">Pistache</h3>
+                <p class="cardDescription">Passionate about development and design,
+                  I carry out projects at the request of users.
+                </p>
+                <a href="#" class="cardButton">View More</a>
+              </div>
+            </article>
+
+            <article class="cardArticle swiper-slide">
+              <div class="cardImagem">
+                <img src="/img/shop1.png" alt="" class="cardImg" height="250px">
+                <div class="cardShadow"></div>
+              </div>
+              <div class="cardData">
+                <h3 class="cardName">Morango</h3>
+                <p class="cardDescription">Passionate about development and design,
+                  I carry out projects at the request of users.
+                </p>
+                <a href="#" class="cardButton">View More</a>
+              </div>
+            </article>
+          </div>
+           <!-- Botões de navegação -->
+           
+          </div>  
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+      </div>
+   </section><!--PRODUTOS-->
+  
+   <section class="preparar" id="preparar">
+    <div class="containerPreparar" id="containerPreparar">
+      <div class="texto" id="texto">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          <br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        </p>
+        <button id="slideToggle" class="slide-btn">View</button>
+      </div>
+      <img src="/img/preparamento.jpg" alt="Preparamento" id="imagem">
+    </div>
+    
+  </section>
+  
+  <section class="footer" id="footer">
+    <div class="footer-container container">
+      <div class="footer-box">
+        <a href="#" class="logo"><img src="/img/logo.png" alt=""></a>
+        <div class="social">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+      <div class="footer-box">
+        <h3>Page</h3>
+        <a href="#">Home</a>
+        <a href="#">Café</a>
+        <a href="#">Sabores</a>
+        <a href="#">Sobre</a>
+      </div>
+      <div class="footer-box">
+        <h3>Legal</h3>
+        <a href="#">Privacy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+      <div class="footer-box">
+        <h3>Contact</h3>
+        <a href="#"><p>United States</p></a>
+        <a href="#"><p>Japan</p></a>
+        <a href="#"><p>Brazil</p></a>
+      </div>
+    </div>
+  </section><!--Footer-->
+
+  <div class="copyright">
+    <p>&#169; David Souza All Rigth Reserved </p>
+  </div>
+
+</body>
+</html>
+
+<script src="sabores.js"></script>
+<script src="swiper-site.js"></script>
+<script src="swipe.js"></script>
+<script src="preparo.js"></script>
+<script src="menu.js"></script>
