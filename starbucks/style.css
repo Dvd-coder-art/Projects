@@ -17,6 +17,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html{
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -31,12 +38,6 @@ body{
   overflow-x: hidden; /* ou altere para 'overflow: auto;' */
 }
 
-html{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-y: scroll; /* Ativar rolagem, se necessário */
-}
 
 button{
   height: 50px;
@@ -521,7 +522,6 @@ section.items .titulo{
 }
 
 .cardImagem {
-  text-align: center;
   margin: 0; /* Remove o espaçamento extra */
 }
 
@@ -534,7 +534,7 @@ section.items .titulo{
   height: 200px;
 }
 
-.cardImg {
+.cardImg{
   max-width: 180px;
   display: block;
   margin: 0 auto; /* Centraliza horizontalmente */
@@ -1025,6 +1025,8 @@ section.footer{
     max-width: 250px;
   }
 
+
+
   .thumb{
     left: 30%;
   }
@@ -1056,6 +1058,13 @@ section.footer{
   .swiper-slide {
     width: auto; 
   }
+
+  .cardImagem{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
 
   @media screen and (max-width: 1035px){
     .swiper{
@@ -1192,6 +1201,16 @@ section.footer{
     }
     @media screen and (max-width: 764px){
       
+      html {
+        overflow-y: scroll;
+        padding: 0;
+        margin: 0;
+      }
+
+      section {
+        scroll-margin-top: 200px; /* Altura do seu menu fixo */
+      }
+
       .container-sabores .textBox {
         max-width: 300px;
         font-size: 80%;
@@ -1292,6 +1311,37 @@ section.footer{
 
 
           @media screen and (max-width: 496px){
+
+            .swiper {
+              max-width: 800px;
+              max-height: 300px;
+              margin: 0;
+            }
+            
+
+            .cardImg{
+              top: 20px;
+              max-width: 70%;
+              max-height: 70%;
+            }
+            
+
+            .cardArticle h3{
+              font-size: 15px;
+            }
+            
+            .cardArticle p{
+              font-size: 8px;
+            }
+
+            .cardData{
+              padding-bottom: 60px;
+            }
+
+            .cardButton{
+             display: none;
+            }
+
             .containerPreparar.slide-active .texto {
               transform: translateX(70%);
               transition: 1s ease-in-out, opacity 0.6s ease-in-out;
